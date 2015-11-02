@@ -50,15 +50,20 @@ public class Rational
 	   return String.valueOf(firstNum) + "/" + String.valueOf(firstDen);
    }
    
-   //First finds the gcf and then reduces num and den by gcf
+     
+ //Returns the String of reduced
    private String getReduced(){
+	   reduce();
+	   return String.valueOf(reducedNum) + "/" + String.valueOf(reducedDen);
+   }
+   
+   //Reduces the numerator and denominator
+   private void reduce(){
 	   getGCF(firstNum,firstDen);
 	   reducedNum = firstNum / gcf;
 	   reducedDen = firstDen / gcf;
-	   	   
-	   return String.valueOf(reducedNum) + "/" + String.valueOf(reducedDen);
+	   
    }
-
    
    //Method to find gcf
   private void getGCF(int n1,int n2)
